@@ -84,6 +84,21 @@ public class UserValidation {
         else
             System.out.println("Not valid");
     }
+    private static void User_Password_Rule1() {
+        //UC6 User need to enter valid Password with at least one Uppercase
+        String PASSWORD_PATTERN1 = "^([a-z0-9~!@#$]*[A-Z]){1}[0-9a-zA-Z~!@#$]*$";
+        System.out.println("Enter your Password:");
+        String password1 = scanner.next();
+
+        Pattern pattern5 = Pattern.compile(PASSWORD_PATTERN1);
+        Matcher matcher5 = pattern5.matcher(password1);
+
+        boolean result5 = matcher5.matches();
+        if(result5 == true)
+            System.out.println("Valid");
+        else
+            System.out.println("Not valid");
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration Program");
         User_FirstName();
@@ -91,6 +106,6 @@ public class UserValidation {
         User_Email();
         User_MobileNumber();
         User_Password();
+        User_Password_Rule1();
     }
-
 }
